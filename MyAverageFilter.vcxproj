@@ -129,9 +129,14 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MyAverageFilter.cpp" />
+    <ClCompile Include="MyKinematicDetector.cpp" />
+    <ClCompile Include="ToWeightData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Kalman.h" />
     <ClInclude Include="MyAverageFilter.h" />
+    <ClInclude Include="MyKinematicDetector.h" />
+    <ClInclude Include="ToWeightData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
