@@ -1,8 +1,15 @@
 #ifndef _MY_AVERAGE_FILTER_
 #define _MY_AVERAGE_FILTER_ 3
 #include<queue>
+#ifndef MY_DEMICAL
+#define MY_DEMICAL
 typedef double demical;
+#endif
+
+#ifndef MY_DATA
+#define MY_DATA
 typedef int mydata;
+#endif
 using namespace std;
 class AverageInteface {
 public:
@@ -14,15 +21,23 @@ private:
 	mydata length;
 	mydata average;
 	mydata absoluteError;
+	int calculator;
 	demical relativeError;
 	AverageInteface* averageInteface;
-	queue<mydata> *my_queue;
+	//<mydata> *my_queue;
+	mydata* my_queue;
 	bool isFull;
 	bool isBalence;
 
 	void calculateAverage();
 
-	bool is();
+	bool checkBalence();
+
+	bool checkSingleData(mydata data);
+
+	void addElement(mydata data);
+
+	void reset();
 public:
 	MyAverageFilter(AverageInteface* averageInteface);
 
@@ -32,9 +47,6 @@ public:
 
 	void update(mydata data);
 
-	
-
-	
 };
 
 #endif
